@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.gl.simpletrilog.ListAllActivities;
 import com.gl.simpletrilog.LogSingleActivity;
-import com.gl.simpletrilog.SimpleTriLogServlet;
+import com.gl.simpletrilog.RawLogInput;
 
 @SuppressWarnings("serial")
 public class RoutingServlet extends HttpServlet {
@@ -36,7 +36,7 @@ public class RoutingServlet extends HttpServlet {
 		}
 	}
 	private static final Logger log = Logger.getLogger(RoutingServlet.class.getName());
-	private static final String BASE_PATH = "/polls";
+	private static final String BASE_PATH = "/simpletrilog";
 	private Map<String, IHandler> handlers = new HashMap<String, IHandler>();
 	private Map<String[], IHandler> complexHandlers = new HashMap<String[], IHandler>();
 
@@ -146,6 +146,7 @@ public class RoutingServlet extends HttpServlet {
 		// handlers.put(handler.getUrlPattern(), handler);
 		addHandler(new LogSingleActivity());
 		addHandler(new ListAllActivities());
+		addHandler(new RawLogInput("/simpletrilog.jsp"));
 
 	}
 

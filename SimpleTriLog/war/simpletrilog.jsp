@@ -23,7 +23,7 @@ to include your name with greetings you post.</p>
     }
 %>
 
-<form action="/logsingle" method="post"> 
+<form action="/simpletrilog/logsingle" method="post"> 
 	<div id="freetext_div">Freetext : <input type="text" name="freetext"/></div>
 	<input type="submit" value="Post activity"/>
 </form>

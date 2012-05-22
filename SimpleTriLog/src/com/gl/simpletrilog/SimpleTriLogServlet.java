@@ -27,6 +27,6 @@ public class SimpleTriLogServlet extends AbstractServlet {
 	@Override
 	public String getUrlPattern() {
 		// TODO Auto-generated method stub
-		return "/";
+		return "/simple";
 	}
 }
