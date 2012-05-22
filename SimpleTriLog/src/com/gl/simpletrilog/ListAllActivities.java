@@ -34,6 +34,7 @@ public class ListAllActivities extends AbstractServlet {
                     DatastoreServiceFactory.getDatastoreService();
             Query query = new Query("RawEntry", rawlogKey);
             List<Entity> greetings = datastore.prepare(query).asList(FetchOptions.Builder.withLimit(10));
+            resp.getWriter().println("---------------");
             for (Entity entity:greetings) {
             	resp.getWriter().println(entity.getProperty("raw_data")+"<br/>");
             }
